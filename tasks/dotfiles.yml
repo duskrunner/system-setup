@@ -1,0 +1,17 @@
+- name: Get .dotfiles
+  ansible.builtin.git:
+    repo: https://github.com/duskrunner/.dotfiles.git
+    dest: ~/.dotfiles
+  tags:
+    - zsh
+    - neovim
+- name: Install stow
+  apt: name=stow
+  tags:
+    - zsh
+    - neovim
+- name: Run stow script
+  shell: cd $HOME/.dotfiles && chmod +x ./stow-dotfiles && ./stow-dotfiles
+  tags:
+    - zsh
+    - neovim

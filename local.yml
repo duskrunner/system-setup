@@ -1,0 +1,15 @@
+- hosts: localhost
+  become: true
+  pre_tasks:
+    - name: Update cache
+      apt:
+        update_cache: true
+      tags:
+        - node
+        - zsh
+  tasks:
+    - include: tasks/fonts.yml
+    - include: tasks/zsh.yml
+    - include: tasks/dotfiles.yml
+    - include: tasks/neovim.yml
+    - include: tasks/node.yml
