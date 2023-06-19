@@ -23,3 +23,7 @@
     depth: 1
   tags:
     - zsh
+- name: Make zsh default shell
+  shell: chsh -s $(which zsh)
+  tags:
+    - zsh

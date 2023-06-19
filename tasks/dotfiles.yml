@@ -5,13 +5,16 @@
   tags:
     - zsh
     - neovim
+    - tmux
 - name: Install stow
   apt: name=stow
   tags:
     - zsh
     - neovim
+    - tmux
 - name: Run stow script
   shell: cd $HOME/.dotfiles && chmod +x ./stow-dotfiles && ./stow-dotfiles
   tags:
     - zsh
     - neovim
+    - tmux

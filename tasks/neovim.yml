@@ -8,10 +8,6 @@
   shell: cd $HOME && tar xzvf nvim.tar.gz && mv nvim-linux64 nvim
   tags:
     - neovim
-- name: Update alias in .zshrcz
-  shell: echo "alias nvim=~/nvim/bin/nvim" >> ~/.zshrc && echo "alias vim=~/nvim/bin/nvim" >> ~/.zshrc && echo "alias vi=~/nvim/bin/nvim" >> ~/.zshrc
-  tags:
-    - neovim
 - name: Install ripgrep
   apt: name=ripgrep
   tags:

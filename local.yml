@@ -8,8 +8,10 @@
         - node
         - zsh
   tasks:
+    - include: tasks/git.yml
     - include: tasks/fonts.yml
     - include: tasks/zsh.yml
-    - include: tasks/dotfiles.yml
     - include: tasks/neovim.yml
+    - include: tasks/tmux.yml
+    - include: tasks/dotfiles.yml
     - include: tasks/node.yml
