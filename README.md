@@ -2,7 +2,7 @@
 
 This is my dev setup scripts to set up everything I need for productive development on the new machine.
 
-## Try my setup out
+## How to try my setup out
 
 Before trying out, change the name end email in tasks/git.yml
 
