@@ -1,0 +1,8 @@
+- name: Install fzf
+  apt: name=fzf
+  tags:
+    - fzf
+- name: Make scripts scripts runable
+  shell: chmod +x ~/.dotfiles/bin/.local/bin/*
+  tags:
+    - fzf
