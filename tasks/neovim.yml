@@ -2,12 +2,14 @@
   ansible.builtin.get_url:
     url: https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
     dest: ~/nvim.tar.gz
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
   tags:
     - neovim
 - name: Unzip neovim
   shell: cd $HOME && tar xzvf nvim.tar.gz && mv nvim-linux64 nvim
   tags:
     - neovim
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 - name: Install ripgrep
   apt: name=ripgrep
   tags:
@@ -16,6 +18,7 @@
   shell: rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim
   tags:
     - neovim
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 - name: Install nvchad
   ansible.builtin.git:
     repo: https://github.com/NvChad/NvChad
@@ -23,3 +26,4 @@
     depth: 1
   tags:
     - neovim
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"

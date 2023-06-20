@@ -5,6 +5,7 @@
   tags:
     - fonts
     - zsh
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 - name: Download font regular
   ansible.builtin.get_url:
     url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
@@ -12,6 +13,7 @@
   tags:
     - fonts
     - zsh
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 - name: Download font bold
   ansible.builtin.get_url:
     url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
@@ -19,6 +21,7 @@
   tags:
     - fonts
     - zsh
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 
 - name: Download font italic
   ansible.builtin.get_url:
@@ -27,6 +30,7 @@
   tags:
     - fonts
     - zsh
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 - name: Download font bold italic
   ansible.builtin.get_url:
     url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
@@ -34,3 +38,4 @@
   tags:
     - fonts
     - zsh
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"

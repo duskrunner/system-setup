@@ -8,3 +8,4 @@
     dest: $HOME/.tmux/plugins/tpm
   tags:
     - tmux
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
