@@ -21,5 +21,11 @@ sudo docker run -it <tag> bash
 3. Run inside the container
 
 ```bash
-ansible-playbook local.yml
+ansible-playbook local.yml -e USER=root
+```
+
+## Install localy
+
+```bash
+ansible-playbook local.yml -e USER=<user_name> --ask-become-pass
 ```

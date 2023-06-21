@@ -2,6 +2,7 @@
   ansible.builtin.git:
     repo: https://github.com/duskrunner/.dotfiles.git
     dest: ~/.dotfiles
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
   tags:
     - zsh
     - neovim
@@ -18,3 +19,4 @@
     - zsh
     - neovim
     - tmux
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"

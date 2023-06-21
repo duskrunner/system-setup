@@ -1,5 +1,6 @@
 - name: Install zsh
-  apt: name=zsh
+  apt:
+    name: ["zsh", "curl"]
   tags:
     - zsh
 - name: Change main shell to zsh
@@ -10,12 +11,14 @@
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   tags:
     - zsh
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 - name: Install zsh autosuggestons plugin
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions"
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags:
     - zsh
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 - name: Download powerlevel10k
   ansible.builtin.git:
     repo: https://github.com/romkatv/powerlevel10k
@@ -23,7 +26,4 @@
     depth: 1
   tags:
     - zsh
-- name: Make zsh default shell
-  shell: chsh -s $(which zsh)
-  tags:
-    - zsh
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"

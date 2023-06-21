@@ -14,4 +14,5 @@
     - include: tasks/neovim.yml
     - include: tasks/tmux.yml
     - include: tasks/dotfiles.yml
+    - include: tasks/fzf.yml
     - include: tasks/node.yml
