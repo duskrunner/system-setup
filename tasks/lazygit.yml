@@ -1,0 +1,4 @@
+- name: Install lasygit
+  ansible.builtin.script: ./scripts/install_lazygit
+  tags:
+    - lazygit
