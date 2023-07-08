@@ -8,6 +8,7 @@
         - node
         - zsh
   tasks:
+    - include: tasks/ubuntu.yml
     - include: tasks/git.yml
     - include: tasks/fonts.yml
     - include: tasks/zsh.yml
@@ -17,3 +18,4 @@
     - include: tasks/fzf.yml
     - include: tasks/node.yml
     - include: tasks/lazygit.yml
+    - include: tasks/lazydocker.yml

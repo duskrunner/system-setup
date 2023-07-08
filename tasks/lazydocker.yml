@@ -1,0 +1,21 @@
+- name: Install lazydocker
+  shell: curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+  tags:
+    - lazydocker
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+
+- name: Create docker group
+  shell: sudo groupadd docker
+  tags:
+    - lazydocker
+
+- name: Add user to docker group
+  shell: sudo usermod -aG docker "{{ lookup('ansible.builtin.env', 'USER') }}"
+  tags:
+    - lazydocker
+
+- name: Login to docker group
+  shell: newgrp docker
+  tags:
+    - lazydocker
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
