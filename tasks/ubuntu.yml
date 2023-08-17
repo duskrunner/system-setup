@@ -1,4 +1,5 @@
-- name: Install node
-  apt:
-    name: ["curl", "git", "build-essential"]
-  tags: ubuntu
+- name: Basic setup
+  community.general.pacman:
+    name: ["curl", "git"]
+    state: latest
+  tags: manjaro

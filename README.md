@@ -1,3 +1,6 @@
+<h1 style="color:red">I am switching to manjaro. WIP. If you want to try out my setup in ubuntu. Switch to ubuntu branch</h1>.
+
+
 # Dev Setup
 
 This is my dev setup scripts to set up everything I need for productive development on the new machine.

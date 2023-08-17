@@ -6,16 +6,19 @@
 
 - name: Create docker group
   shell: sudo groupadd docker
+  ignore_errors: true
   tags:
     - lazydocker
 
 - name: Add user to docker group
   shell: sudo usermod -aG docker "{{ lookup('ansible.builtin.env', 'USER') }}"
+  ignore_errors: true
   tags:
     - lazydocker
 
 - name: Login to docker group
   shell: newgrp docker
+  ignore_errors: true
   tags:
     - lazydocker
   become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"

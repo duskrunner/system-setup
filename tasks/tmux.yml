@@ -1,5 +1,6 @@
 - name: Install tmux
-  apt: name=tmux
+  community.general.pacman:
+    name: tmux
   tags:
     - tmux
 - name: Intall tmux plugin manager

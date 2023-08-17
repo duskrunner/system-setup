@@ -1,4 +1,6 @@
 - name: Install lasygit
-  ansible.builtin.script: ./scripts/install_lazygit
+  community.general.pacman:
+    name: lazygit
+    state: latest
   tags:
     - lazygit

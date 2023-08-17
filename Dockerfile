@@ -1,6 +1,6 @@
-FROM ubuntu:focal
+FROM manjarolinux/base:latest
 ARG TAGS
 WORKDIR /usr/local/bin
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y software-properties-common && apt-add-repository -y ppa:ansible/ansible && apt update && apt install -y curl sudo git ansible build-essential neovim
+RUN pacman -S --noconfirm curl sudo git ansible
 COPY . .

@@ -8,7 +8,9 @@
     - neovim
     - tmux
 - name: Install stow
-  apt: name=stow
+  community.general.pacman:
+    name: stow
+    state: latest
   tags:
     - zsh
     - neovim

@@ -1,5 +1,7 @@
 - name: Install fzf
-  apt: name=fzf
+  community.general.pacman:
+    name: fzf
+    state: latest
   tags:
     - fzf
 - name: Make scripts scripts runable

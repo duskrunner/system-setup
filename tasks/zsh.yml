@@ -1,6 +1,10 @@
 - name: Install zsh
-  apt:
-    name: ["zsh", "curl"]
+  community.general.pacman:
+    name:
+      - zsh
+      - curl
+      - which
+    state: latest
   tags:
     - zsh
 - name: Change main shell to zsh
