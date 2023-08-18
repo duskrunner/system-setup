@@ -4,7 +4,7 @@
     - include: tasks/ubuntu.yml
     - include: tasks/git.yml
     - include: tasks/fonts.yml
-    - include: tasks/zsh.yml
+    # - include: tasks/zsh.yml
     - include: tasks/neovim.yml
     - include: tasks/tmux.yml
     - include: tasks/dotfiles.yml

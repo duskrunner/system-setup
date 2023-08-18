@@ -7,10 +7,6 @@
     state: latest
   tags:
     - zsh
-- name: Change main shell to zsh
-  shell: chsh -s `which zsh`
-  tags:
-    - zsh
 - name: Install oh-my-zsh
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   tags:

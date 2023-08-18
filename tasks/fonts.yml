@@ -1,41 +1,12 @@
-- name: Check if .fonts folder is present
-  file:
-    path: "~/.fonts"
-    state: directory
+- name: Install JetBrains NF
+  community.general.pacman:
+    name: ttf-jetbrains-mono-nerd
+    state: latest
   tags:
     - fonts
-    - zsh
-  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
-- name: Download font regular
-  ansible.builtin.get_url:
-    url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
-    dest: ~/.fonts/MesloLGS%20NF%20Regular.ttf
+- name: Install Meslo Nerd
+  community.general.pacman:
+    name: ttf-meslo-nerd
+    state: latest
   tags:
     - fonts
-    - zsh
-  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
-- name: Download font bold
-  ansible.builtin.get_url:
-    url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
-    dest: ~/.fonts/MesloLGS%20NF%20Bold.ttf
-  tags:
-    - fonts
-    - zsh
-  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
-
-- name: Download font italic
-  ansible.builtin.get_url:
-    url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
-    dest: ~/.fonts/MesloLGS%20NF%20Italic.ttf
-  tags:
-    - fonts
-    - zsh
-  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
-- name: Download font bold italic
-  ansible.builtin.get_url:
-    url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
-    dest: ~/.fonts/MesloLGS%20NF%20Bold%20Italic.ttf
-  tags:
-    - fonts
-    - zsh
-  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
