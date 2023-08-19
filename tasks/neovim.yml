@@ -1,7 +1,28 @@
-- name: Download latest stable release of neovim
+- name: install neovim
   community.general.pacman:
     name: neovim
     state: latest
   tags:
     - neovim
-   
+
+- name: Install ripgrep
+  community.general.pacman:
+    name: ripgrep
+    state: latest
+  tags:
+    - neovim
+
+- name: Remove old neovim configs
+  shell: rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim
+  tags:
+    - neovim
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+
+- name: Install nvchad
+  ansible.builtin.git:
+    repo: https://github.com/NvChad/NvChad
+    dest: ~/.config/nvim
+    depth: 1
+  tags:
+    - neovim
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
