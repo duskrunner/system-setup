@@ -1,6 +1,6 @@
 - name: Get .dotfiles
   ansible.builtin.git:
-    repo: https://github.com/duskrunner/.dotfiles.git
+    repo: git@github.com:duskrunner/.dotfiles.git
     dest: ~/.dotfiles
   become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
   tags:

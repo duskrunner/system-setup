@@ -1,11 +1,12 @@
 - hosts: localhost
   become: true
   tasks:
-    - include: tasks/ubuntu.yml
+    - include: tasks/manjaro.yml
     - include: tasks/git.yml
     - include: tasks/fonts.yml
-    # - include: tasks/zsh.yml
     - include: tasks/neovim.yml
+    # If you want nightly version
+    # - include: tasks/neovim-nightly.yml
     - include: tasks/tmux.yml
     - include: tasks/dotfiles.yml
     - include: tasks/fzf.yml

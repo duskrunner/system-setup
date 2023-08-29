@@ -1,5 +1,10 @@
 - name: Basic setup
   community.general.pacman:
-    name: ["curl", "git"]
+    name:
+      - curl
+      - git
+      - kitty
+      - go
+      - yay
     state: latest
   tags: manjaro

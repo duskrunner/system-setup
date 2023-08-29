@@ -6,5 +6,6 @@
     - fzf
 - name: Make scripts scripts runable
   shell: chmod +x ~/.dotfiles/bin/.local/bin/*
+  become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
   tags:
     - fzf

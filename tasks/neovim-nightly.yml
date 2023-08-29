@@ -1,0 +1,7 @@
+- name: install neovim-nightly
+  community.general.pacman:
+    name: neovim-nightly-bin
+    executable: yay
+    state: latest
+  tags:
+    - neovim-nightly
